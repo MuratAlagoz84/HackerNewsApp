@@ -13,6 +13,9 @@
 		9A55AEE723586BF3000C51A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A55AEE623586BF3000C51A3 /* Assets.xcassets */; };
 		9A55AEEA23586BF3000C51A3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A55AEE923586BF3000C51A3 /* Preview Assets.xcassets */; };
 		9A55AEED23586BF3000C51A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A55AEEB23586BF3000C51A3 /* LaunchScreen.storyboard */; };
+		9A55AEF62358775F000C51A3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A55AEF52358775F000C51A3 /* NetworkManager.swift */; };
+		9A55AEF823587AE7000C51A3 /* PostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A55AEF723587AE7000C51A3 /* PostData.swift */; };
+		9A55AEFC2358893C000C51A3 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A55AEFB2358893C000C51A3 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,10 @@
 		9A55AEE923586BF3000C51A3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9A55AEEC23586BF3000C51A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9A55AEEE23586BF3000C51A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A55AEF52358775F000C51A3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		9A55AEF723587AE7000C51A3 /* PostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostData.swift; sourceTree = "<group>"; };
+		9A55AEF92358864B000C51A3 /* HackerNewsApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HackerNewsApp.entitlements; sourceTree = "<group>"; };
+		9A55AEFB2358893C000C51A3 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,9 +63,11 @@
 		9A55AEDF23586BF0000C51A3 /* HackerNewsApp */ = {
 			isa = PBXGroup;
 			children = (
+				9A55AEF92358864B000C51A3 /* HackerNewsApp.entitlements */,
 				9A55AEE023586BF0000C51A3 /* AppDelegate.swift */,
 				9A55AEE223586BF0000C51A3 /* SceneDelegate.swift */,
-				9A55AEE423586BF0000C51A3 /* ContentView.swift */,
+				9A55AEF423587733000C51A3 /* Models */,
+				9A55AEFA23588908000C51A3 /* Views */,
 				9A55AEE623586BF3000C51A3 /* Assets.xcassets */,
 				9A55AEEB23586BF3000C51A3 /* LaunchScreen.storyboard */,
 				9A55AEEE23586BF3000C51A3 /* Info.plist */,
@@ -73,6 +82,24 @@
 				9A55AEE923586BF3000C51A3 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9A55AEF423587733000C51A3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9A55AEF52358775F000C51A3 /* NetworkManager.swift */,
+				9A55AEF723587AE7000C51A3 /* PostData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9A55AEFA23588908000C51A3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9A55AEE423586BF0000C51A3 /* ContentView.swift */,
+				9A55AEFB2358893C000C51A3 /* DetailView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,7 +173,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A55AEF823587AE7000C51A3 /* PostData.swift in Sources */,
+				9A55AEFC2358893C000C51A3 /* DetailView.swift in Sources */,
 				9A55AEE123586BF0000C51A3 /* AppDelegate.swift in Sources */,
+				9A55AEF62358775F000C51A3 /* NetworkManager.swift in Sources */,
 				9A55AEE323586BF0000C51A3 /* SceneDelegate.swift in Sources */,
 				9A55AEE523586BF0000C51A3 /* ContentView.swift in Sources */,
 			);
@@ -284,7 +314,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HackerNewsApp/HackerNewsApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"HackerNewsApp/Preview Content\"";
 				DEVELOPMENT_TEAM = QZHTVJPM43;
 				ENABLE_PREVIEWS = YES;
@@ -295,6 +327,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = alagoz.HackerNewsApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -304,7 +337,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HackerNewsApp/HackerNewsApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"HackerNewsApp/Preview Content\"";
 				DEVELOPMENT_TEAM = QZHTVJPM43;
 				ENABLE_PREVIEWS = YES;
@@ -315,6 +350,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = alagoz.HackerNewsApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
