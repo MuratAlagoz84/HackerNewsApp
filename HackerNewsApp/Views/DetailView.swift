@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import WebKit
 
 struct DetailView: View {
     
@@ -23,21 +22,4 @@ struct DetailView_Previews: PreviewProvider {
         DetailView(url:"https://www.google.com")
     }
 }
-struct WebView:UIViewRepresentable {
-    
-    
-    let urlString: String?
-    
-    func makeUIView(context: UIViewRepresentableContext<WebView>) -> WebView.UIViewType {
-        return WKWebView()
-    }
-    func updateUIView(_ uiView: WKWebView, context: UIViewRepresentableContext<WebView>) {
-        if let safeString = urlString{
-            if let url = URL(string: safeString){
-            let request = URLRequest(url: url)
-            uiView.load(request)
-        }
-    }
-}
 
-}
